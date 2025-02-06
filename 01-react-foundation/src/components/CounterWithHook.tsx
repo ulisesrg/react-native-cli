@@ -1,11 +1,9 @@
-import { useState } from "react";
+import { useCounter } from "../hooks/useCounter";
 
-export const Counter = () => {
-  const [ count, setCount ] = useState<number>(10);
-
-  const increaseBy = ( value:number ) => {
-    setCount( count + value );
-  }
+export const CounterWithHook = () => {
+  const { count, increaseBy } = useCounter({
+    initialValue: 5
+  });
 
   return (
     <>

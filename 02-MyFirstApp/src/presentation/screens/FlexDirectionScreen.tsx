@@ -3,10 +3,126 @@ import {StyleSheet, View} from 'react-native';
 export const FlexDirectionScreen = () => {
   return (
     <View style={styles.container}>
-      <View style={[styles.box, styles.box1]} />
-      <View style={[styles.box, styles.box2]} />
-      <View style={[styles.box, styles.box3]} />
-      <View style={[styles.box, styles.box4]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
+      <View style={[ styles.box, styles.box1 ]} />
+      <View style={[ styles.box, styles.box2 ]} />
+      <View style={[ styles.box, styles.box3 ]} />
+      <View style={[ styles.box, styles.box4 ]} />
     </View>
   );
 };
@@ -17,7 +133,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#d1d1d1',
     justifyContent: 'space-between',
     alignItems: 'stretch',
-    flexDirection: 'row',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
   },
   box: {
     // flex: 1,
@@ -30,7 +147,6 @@ const styles = StyleSheet.create({
   },
   box2: {
     backgroundColor: '#4240a2',
-    alignSelf: 'flex-end',
   },
   box3: {
     backgroundColor: '#2e2d71',

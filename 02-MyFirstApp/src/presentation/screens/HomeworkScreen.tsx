@@ -14,7 +14,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#28425B',
-    // TODO: Tarea
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   box: {
     width: 100,
@@ -24,11 +26,20 @@ const styles = StyleSheet.create({
   },
   purpleBox: {
     backgroundColor: '#5856D6',
+    // top: 100
+    // alignSelf: 'flex-end',
+    // flex: 2,
   },
   orangeBox: {
     backgroundColor: '#F0A23B',
+    // flex: 2,
+    // right: -100
+    top: 50,
   },
   blueBox: {
     backgroundColor: '#28C4D9',
+    // flex: 4,
+    // width: '100%',
+    // alignSelf: 'flex-start',
   },
 });

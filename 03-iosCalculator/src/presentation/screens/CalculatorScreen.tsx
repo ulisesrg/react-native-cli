@@ -1,12 +1,17 @@
 import {Text, View} from 'react-native';
 import {colors, styles} from '../../config/theme/app-theme';
 import {CalculatorButton} from '../components/CalculatorButton';
+import {useCalculator} from '../hooks/useCalculator';
 
 export const CalculatorScreen = () => {
+  const {number, handleCharacterPress} = useCalculator();
+
   return (
     <View style={styles.calculatorContainer}>
       <View style={{paddingHorizontal: 30, paddingBottom: 20}}>
-        <Text style={styles.mainResult}>1500</Text>
+        <Text adjustsFontSizeToFit numberOfLines={1} style={styles.mainResult}>
+          {number}
+        </Text>
         <Text style={styles.subResult}>15</Text>
       </View>
 
@@ -37,9 +42,9 @@ export const CalculatorScreen = () => {
       </View>
 
       <View style={styles.row}>
-        <CalculatorButton onPress={() => console.log('7')} label="7" />
-        <CalculatorButton onPress={() => console.log('8')} label="8" />
-        <CalculatorButton onPress={() => console.log('9')} label="9" />
+        <CalculatorButton onPress={() => handleCharacterPress('7')} label="7" />
+        <CalculatorButton onPress={() => handleCharacterPress('8')} label="8" />
+        <CalculatorButton onPress={() => handleCharacterPress('9')} label="9" />
         <CalculatorButton
           onPress={() => console.log('x')}
           label="x"
@@ -48,9 +53,9 @@ export const CalculatorScreen = () => {
       </View>
 
       <View style={styles.row}>
-        <CalculatorButton onPress={() => console.log('4')} label="4" />
-        <CalculatorButton onPress={() => console.log('5')} label="5" />
-        <CalculatorButton onPress={() => console.log('6')} label="6" />
+        <CalculatorButton onPress={() => handleCharacterPress('4')} label="4" />
+        <CalculatorButton onPress={() => handleCharacterPress('5')} label="5" />
+        <CalculatorButton onPress={() => handleCharacterPress('6')} label="6" />
         <CalculatorButton
           onPress={() => console.log('-')}
           label="-"
@@ -59,9 +64,9 @@ export const CalculatorScreen = () => {
       </View>
 
       <View style={styles.row}>
-        <CalculatorButton onPress={() => console.log('1')} label="1" />
-        <CalculatorButton onPress={() => console.log('2')} label="2" />
-        <CalculatorButton onPress={() => console.log('3')} label="3" />
+        <CalculatorButton onPress={() => handleCharacterPress('1')} label="1" />
+        <CalculatorButton onPress={() => handleCharacterPress('2')} label="2" />
+        <CalculatorButton onPress={() => handleCharacterPress('3')} label="3" />
         <CalculatorButton
           onPress={() => console.log('+')}
           label="+"
@@ -71,11 +76,11 @@ export const CalculatorScreen = () => {
 
       <View style={styles.row}>
         <CalculatorButton
-          onPress={() => console.log('0')}
+          onPress={() => handleCharacterPress('0')}
           label="0"
           columns={2}
         />
-        <CalculatorButton onPress={() => console.log('.')} label="." />
+        <CalculatorButton onPress={() => handleCharacterPress('.')} label="." />
         <CalculatorButton
           onPress={() => console.log('=')}
           label="="

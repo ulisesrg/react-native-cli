@@ -4,8 +4,18 @@ import {CalculatorButton} from '../components/CalculatorButton';
 import {useCalculator} from '../hooks/useCalculator';
 
 export const CalculatorScreen = () => {
-  const {number, handleCharacterPress, handleDeletePress, handleClearPress, handleTogglePress} =
-    useCalculator();
+  const {
+    number,
+    prevNumber,
+    handleCharacterPress,
+    handleDeletePress,
+    handleClearPress,
+    handleTogglePress,
+    handleAddPress,
+    handleSubtractPress,
+    handleMultiplyPress,
+    handleDividePress,
+  } = useCalculator();
 
   return (
     <View style={styles.calculatorContainer}>
@@ -13,7 +23,9 @@ export const CalculatorScreen = () => {
         <Text adjustsFontSizeToFit numberOfLines={1} style={styles.mainResult}>
           {number}
         </Text>
-        <Text style={styles.subResult}>15</Text>
+        <Text adjustsFontSizeToFit numberOfLines={1} style={styles.subResult}>
+          {prevNumber}
+        </Text>
       </View>
 
       <View style={styles.row}>
@@ -36,7 +48,7 @@ export const CalculatorScreen = () => {
           color={colors.lightGray}
         />
         <CalculatorButton
-          onPress={() => console.log('+')}
+          onPress={handleDividePress}
           label="÷"
           color={colors.orange}
         />
@@ -47,7 +59,7 @@ export const CalculatorScreen = () => {
         <CalculatorButton onPress={() => handleCharacterPress('8')} label="8" />
         <CalculatorButton onPress={() => handleCharacterPress('9')} label="9" />
         <CalculatorButton
-          onPress={() => console.log('x')}
+          onPress={handleMultiplyPress}
           label="x"
           color={colors.orange}
         />
@@ -58,7 +70,7 @@ export const CalculatorScreen = () => {
         <CalculatorButton onPress={() => handleCharacterPress('5')} label="5" />
         <CalculatorButton onPress={() => handleCharacterPress('6')} label="6" />
         <CalculatorButton
-          onPress={() => console.log('-')}
+          onPress={handleSubtractPress}
           label="-"
           color={colors.orange}
         />
@@ -69,7 +81,7 @@ export const CalculatorScreen = () => {
         <CalculatorButton onPress={() => handleCharacterPress('2')} label="2" />
         <CalculatorButton onPress={() => handleCharacterPress('3')} label="3" />
         <CalculatorButton
-          onPress={() => console.log('+')}
+          onPress={handleAddPress}
           label="+"
           color={colors.orange}
         />

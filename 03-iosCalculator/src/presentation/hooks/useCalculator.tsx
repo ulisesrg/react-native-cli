@@ -1,7 +1,17 @@
-import {useState} from 'react';
+import {useRef, useState} from 'react';
+
+enum Operator {
+  add,
+  subtract,
+  multiply,
+  divide,
+}
 
 export const useCalculator = () => {
   const [number, setNumber] = useState('0');
+  const [prevNumber, setPrevNumber] = useState('');
+
+  const lastOperation = useRef<Operator>(null);
 
   const handleCharacterPress = (numberString: string) => {
     buildNumberString(numberString);
@@ -69,6 +79,36 @@ export const useCalculator = () => {
      */
   };
 
+  const setLastNumber: () => void = () => {
+    if (number.endsWith('.')) {
+      setPrevNumber(number.slice(0, -1));
+    } else {
+      setPrevNumber(number);
+    }
+
+    setNumber('0');
+  };
+
+  const handleAddPress = () => {
+    setLastNumber();
+    lastOperation.current = Operator.add;
+  };
+
+  const handleSubtractPress = () => {
+    setLastNumber();
+    lastOperation.current = Operator.subtract;
+  };
+
+  const handleMultiplyPress = () => {
+    setLastNumber();
+    lastOperation.current = Operator.multiply;
+  };
+
+  const handleDividePress = () => {
+    setLastNumber();
+    lastOperation.current = Operator.divide;
+  };
+
   const handleDeletePress = () => {
     deleteLastCharacter();
   };
@@ -89,6 +129,7 @@ export const useCalculator = () => {
 
   const handleClearPress = () => {
     setNumber('0');
+    setPrevNumber('');
   };
 
   const handleTogglePress = () => {
@@ -108,11 +149,16 @@ export const useCalculator = () => {
   return {
     // Properties
     number,
+    prevNumber,
 
     // Methods
     handleCharacterPress,
     handleClearPress,
     handleDeletePress,
     handleTogglePress,
+    handleAddPress,
+    handleSubtractPress,
+    handleMultiplyPress,
+    handleDividePress,
   };
 };

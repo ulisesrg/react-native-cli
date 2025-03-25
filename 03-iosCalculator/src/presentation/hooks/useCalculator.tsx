@@ -146,6 +146,37 @@ export const useCalculator = () => {
     setNumber('-' + number);
   };
 
+  const handleEqualPress = () => {
+    calculateResult();
+    setPrevNumber('');
+  };
+
+  const calculateResult: () => void = () => {
+    const num1 = Number(prevNumber);
+    const num2 = Number(number);
+
+    switch (lastOperation.current) {
+      case Operator.add:
+        setNumber(`${num1 + num2}`);
+        break;
+
+      case Operator.subtract:
+        setNumber(`${num1 - num2}`);
+        break;
+
+      case Operator.multiply:
+        setNumber(`${num1 * num2}`);
+        break;
+
+      case Operator.divide:
+        setNumber(`${num1 / num2}`);
+        break;
+
+      default:
+        throw new Error('Operation not implemented');
+    }
+  };
+
   return {
     // Properties
     number,
@@ -160,5 +191,6 @@ export const useCalculator = () => {
     handleSubtractPress,
     handleMultiplyPress,
     handleDividePress,
+    handleEqualPress,
   };
 };

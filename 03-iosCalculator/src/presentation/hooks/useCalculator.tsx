@@ -1,17 +1,28 @@
-import {useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 enum Operator {
-  add,
-  subtract,
-  multiply,
-  divide,
+  add = '+',
+  subtract = '-',
+  multiply = 'x',
+  divide = '÷',
 }
 
 export const useCalculator = () => {
   const [number, setNumber] = useState('0');
   const [prevNumber, setPrevNumber] = useState('');
+  const [formula, setFormula] = useState('');
 
-  const lastOperation = useRef<Operator>(null);
+  useEffect(() => {
+    if (lastOperation.current) {
+      const firstFormulaPart = formula.split(' ').at(0);
+      setFormula(`${firstFormulaPart} ${lastOperation.current} ${number}`);
+    } else {
+      setFormula(number);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [number]);
+
+  const lastOperation = useRef<Operator>(undefined);
 
   const handleCharacterPress = (numberString: string) => {
     buildNumberString(numberString);
@@ -130,6 +141,8 @@ export const useCalculator = () => {
   const handleClearPress = () => {
     setNumber('0');
     setPrevNumber('');
+    lastOperation.current = undefined;
+    setFormula('');
   };
 
   const handleTogglePress = () => {
@@ -147,30 +160,34 @@ export const useCalculator = () => {
   };
 
   const handleEqualPress = () => {
-    calculateResult();
+    const result = calculateResult();
+    setFormula(`${result}`);
+    lastOperation.current = undefined;
     setPrevNumber('');
   };
 
-  const calculateResult: () => void = () => {
-    const num1 = Number(prevNumber);
-    const num2 = Number(number);
+  const calculateResult: () => number = () => {
+    const [firstValue, operation, secondValue] = formula.split(' ');
 
-    switch (lastOperation.current) {
+    const num1 = Number(firstValue);
+    const num2 = Number(secondValue);
+
+    if (isNaN(num2)) {
+      return num1;
+    }
+
+    switch (operation) {
       case Operator.add:
-        setNumber(`${num1 + num2}`);
-        break;
+        return num1 + num2;
 
       case Operator.subtract:
-        setNumber(`${num1 - num2}`);
-        break;
+        return num1 - num2;
 
       case Operator.multiply:
-        setNumber(`${num1 * num2}`);
-        break;
+        return num1 * num2;
 
       case Operator.divide:
-        setNumber(`${num1 / num2}`);
-        break;
+        return num1 / num2;
 
       default:
         throw new Error('Operation not implemented');
@@ -181,6 +198,7 @@ export const useCalculator = () => {
     // Properties
     number,
     prevNumber,
+    formula,
 
     // Methods
     handleCharacterPress,

@@ -22,6 +22,13 @@ export const useCalculator = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [number]);
 
+  useEffect(() => {
+    const result = calculateResult();
+    setPrevNumber(`${result}`);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [formula]);
+
+
   const lastOperation = useRef<Operator>(undefined);
 
   const handleCharacterPress = (numberString: string) => {
@@ -91,6 +98,9 @@ export const useCalculator = () => {
   };
 
   const setLastNumber: () => void = () => {
+    const result = calculateResult();
+    setFormula(`${result}`);
+
     if (number.endsWith('.')) {
       setPrevNumber(number.slice(0, -1));
     } else {
